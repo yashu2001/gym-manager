@@ -43,6 +43,8 @@ from PyQt5 import QtGui,QtWidgets,QtCore
 from PyQt5.QtCore import pyqtSlot,QDateTime,Qt
 from PyQt5.QtWidgets import QApplication,QDialog,QMainWindow,QTableWidget,QTableWidgetItem,QHeaderView
 from PyQt5.uic import loadUi
+QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True) #enable highdpi scaling
+QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True) #use highdpi icons
 name=0#global var used in forwarding data from one ui to another
 class testday(QMainWindow):
     def __init__(self):
@@ -93,6 +95,7 @@ class testday(QMainWindow):
         self.ui.lineEdit_5.textChanged.connect(self.val)
         self.ui.lineEdit_6.textChanged.connect(self.val)
         self.ui.pushButton.clicked.connect(self.entry)
+        self.ui.pushButton.setEnabled(False)
     def val(self):
         try:
             barbell=int(self.ui.lineEdit_3.text())
@@ -229,6 +232,7 @@ class deleteclient(QMainWindow):
         self.ui.pushButton.clicked.connect(self.delete)
         self.ui.pushButton_3.clicked.connect(self.search)
         self.ui.tableWidget_2.itemSelectionChanged.connect(self.btnalt)
+        self.ui.pushButton.setEnabled(False)
     def btnalt(self):
         self.ui.pushButton.setEnabled(True)
     def search(self):
@@ -439,6 +443,7 @@ class addclient(QMainWindow):
         self.ui.lineEdit_2.textChanged.connect(self.fil)
         self.ui.lineEdit_3.textChanged.connect(self.fil)
         self.ui.pushButton_2.clicked.connect(self.back)
+        self.ui.pushButton.setEnabled(False)
     def fil(self):
         try:
             name="'"+self.ui.lineEdit.text()+"'"
@@ -885,6 +890,7 @@ class adattd(QMainWindow):
         self.ui.pushButton_2.clicked.connect(self.search)
         self.ui.pushButton_3.clicked.connect(self.back)
         self.ui.tableWidget.itemSelectionChanged.connect(self.btnalt)
+        self.ui.pushButton.setEnabled(False)
     def btnalt(self):
         self.ui.pushButton.setEnabled(True)
     def back(self):
@@ -914,7 +920,7 @@ class adattd(QMainWindow):
         self.close()
     def search(self):
         self.ui.tableWidget.setRowCount(0)
-        reg="^"+self.ui.lineEdit.text()+"*"
+        reg="^"+self.ui.lineEdit.text().lower()+"*"
         if(len(reg)>2):
             print(reg)
             cur.execute('''
@@ -923,7 +929,7 @@ class adattd(QMainWindow):
             rows=cur.fetchall()
             alwd=[]
             for x in range(len(rows)):
-                if(re.match(reg,rows[x][1])):
+                if(re.match(reg,rows[x][1].lower())):
                    alwd.append(rows[x]) 
             print(rows,alwd)
 
@@ -1008,6 +1014,7 @@ class User(QMainWindow):
         self.ui.pushButton.clicked.connect(self.markattd)
         self.ui.pushButton_2.clicked.connect(self.logout)
         self.ui.pushButton_3.clicked.connect(self.search)
+        self.ui.pushButton.setEnabled(False)
         self.ui.tableWidget.itemSelectionChanged.connect(self.btnalt)
     def btnalt(self):
         try:
@@ -1019,7 +1026,7 @@ class User(QMainWindow):
             print('please select a row')
     def search(self):
         self.ui.tableWidget.setRowCount(0)
-        reg="^"+self.ui.lineEdit.text()+"*"
+        reg="^"+(str(self.ui.lineEdit.text())).lower()+"*"
         if(len(reg)>2):
             print(reg)
             cur.execute('''
@@ -1028,7 +1035,7 @@ class User(QMainWindow):
             rows=cur.fetchall()
             alwd=[]
             for x in range(len(rows)):
-                if(re.match(reg,rows[x][1])):
+                if(re.match(reg,rows[x][1].lower())):
                    alwd.append(rows[x]) 
             print(rows,alwd)
 
@@ -1145,6 +1152,7 @@ class changepass(QMainWindow):
         self.ui.pushButton.clicked.connect(self.chgpass)
         self.ui.lineEdit.textChanged.connect(self.val)
         self.ui.lineEdit_2.textChanged.connect(self.val)
+        self.ui.pushButton.setEnabled(False)
     def val(self):
         try:
             newpass=str(self.ui.lineEdit_2.text())
@@ -1640,10 +1648,6 @@ def first():
     if(datetime.datetime.today().strftime("%A")=='Saturday'):
         report_fun()
     app=QApplication(sys.argv)
-    if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
-        app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-    if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
-        app.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
     widget=LoginPage()
     widget.show()
     sys.exit(app.exec_())
