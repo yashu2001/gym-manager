@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'admin.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.0
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -14,6 +14,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(482, 454)
+        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -25,6 +26,9 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 0, 0, 1, 4, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);")
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.pushButton, 2, 2, 1, 1)
         self.lcdNumber = QtWidgets.QLCDNumber(self.centralwidget)
@@ -36,18 +40,33 @@ class Ui_MainWindow(object):
         self.lcdNumber.setObjectName("lcdNumber")
         self.gridLayout.addWidget(self.lcdNumber, 1, 0, 1, 4, QtCore.Qt.AlignVCenter)
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);")
         self.pushButton_2.setObjectName("pushButton_2")
         self.gridLayout.addWidget(self.pushButton_2, 2, 1, 1, 1)
         self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_6.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);")
         self.pushButton_6.setObjectName("pushButton_6")
         self.gridLayout.addWidget(self.pushButton_6, 3, 1, 1, 1)
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_4.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);")
         self.pushButton_4.setObjectName("pushButton_4")
         self.gridLayout.addWidget(self.pushButton_4, 4, 1, 1, 1)
         self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_5.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);")
         self.pushButton_5.setObjectName("pushButton_5")
         self.gridLayout.addWidget(self.pushButton_5, 3, 2, 1, 1)
         self.pushButton_7 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_7.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);")
         self.pushButton_7.setObjectName("pushButton_7")
         self.gridLayout.addWidget(self.pushButton_7, 4, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)

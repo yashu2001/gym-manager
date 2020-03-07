@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'loginpage.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.0
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -14,13 +14,13 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(466, 394)
-        MainWindow.setStyleSheet("background-color: rgb(240, 240, 240);")
+        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setStyleSheet("color: rgb(0,0,0);\n"
+        self.label.setStyleSheet("color: rgb(240,240,240);\n"
 "")
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 1, 0, 1, 1, QtCore.Qt.AlignRight|QtCore.Qt.AlignBottom)
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.gridLayout.addWidget(self.lineEdit_2, 2, 1, 1, 1, QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setStyleSheet("color: rgb(0,0,0);\n"
+        self.label_2.setStyleSheet("color: rgb(240,240,240);\n"
 "")
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 2, 0, 1, 1, QtCore.Qt.AlignRight|QtCore.Qt.AlignTop)
@@ -49,8 +49,8 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label_3, 0, 0, 1, 2, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setMaximumSize(QtCore.QSize(194, 23))
-        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"alternate-background-color: rgb(240, 240, 240);")
+        self.pushButton.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"color: rgb(255, 255, 255);")
         self.pushButton.setAutoDefault(False)
         self.pushButton.setDefault(True)
         self.pushButton.setObjectName("pushButton")
@@ -68,6 +68,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "USERNAME"))
-        self.label_2.setText(_translate("MainWindow", "PASSWORD"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">USERNAME</span></p></body></html>"))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">PASSWORD</span></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "LOGIN"))

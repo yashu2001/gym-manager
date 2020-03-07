@@ -868,7 +868,8 @@ class Loginfailed(QMainWindow):
                 self.main=Loginfailed()
                 self.main.show()
                 self.close()
-        except:
+        except Exception as e:
+            print(e)
             self.main=Loginfailed()
             self.main.show()
             self.close()
