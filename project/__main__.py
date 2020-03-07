@@ -1292,7 +1292,7 @@ class Admin(QMainWindow):
     def timerEvent(self,e):
         self.ui.lcdNumber.setDigitCount(20)
         #self.lcdNumber.display(QDateTime.currentDateTime().toString())
-        self.ui.lcdNumber.display(str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        self.ui.lcdNumber.display(str(datetime.datetime.now().strftime("%H:%M:%S %d-%m-%Y")))
 class LoginPage(QMainWindow):
     def __init__(self):
         super(LoginPage,self).__init__()

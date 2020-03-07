@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'plan-settings.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.0
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.pushButton_3, 2, 2, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_4.setObjectName("pushButton_4")
-        self.gridLayout.addWidget(self.pushButton_4, 3, 1, 1, 2, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignBottom)
+        self.gridLayout.addWidget(self.pushButton_4, 3, 1, 1, 2, QtCore.Qt.AlignRight|QtCore.Qt.AlignBottom)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
