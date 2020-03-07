@@ -6,107 +6,60 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>724</width>
-    <height>593</height>
+    <width>727</width>
+    <height>545</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>724</width>
-    <height>593</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>724</width>
-    <height>593</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>6</x>
-      <y>9</y>
-      <width>701</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../logos/2.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>16</x>
-      <y>190</y>
-      <width>691</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;DELETE PLAN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>16</x>
-      <y>270</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;NAME OF PLAN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>360</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>DELETE</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>504</x>
-      <y>522</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>BACK TO PREVIOUS MENU</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>270</y>
-      <width>161</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0" colspan="3" alignment="Qt::AlignHCenter|Qt::AlignTop">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;DELETE PLAN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" alignment="Qt::AlignLeft|Qt::AlignTop">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="3" column="1" alignment="Qt::AlignLeft|Qt::AlignTop">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>DELETE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2" alignment="Qt::AlignRight|Qt::AlignBottom">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>BACK TO PREVIOUS MENU</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>2.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" alignment="Qt::AlignLeft|Qt::AlignTop">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;NAME OF PLAN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

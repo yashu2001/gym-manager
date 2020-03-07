@@ -51,6 +51,7 @@ class testday(QMainWindow):
         super(testday,self).__init__()
         self.ui=testday_ui()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -189,6 +190,7 @@ class deleteclient(QMainWindow):
         #loadUi('delete-client.ui',self)
         self.ui = delete_client()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
@@ -304,6 +306,7 @@ class modifyclient(QMainWindow):
         #loadUi('modify-client.ui',self)
         self.ui = modify_client()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -338,6 +341,7 @@ class modifyclient1(QMainWindow):
         #loadUi('modify-client1.ui',self)
         self.ui = modify_client1()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -380,6 +384,19 @@ class modifyclient1(QMainWindow):
         self.ui.lineEdit_3.setText(str(row2[0][0]))
         self.ui.pushButton.clicked.connect(self.update)
         self.ui.pushButton_2.clicked.connect(self.back)
+        self.ui.lineEdit_3.textChanged.connect(self.val)
+        self.ui.lineEdit_2.textChanged.connect(self.val)
+        self.ui.lineEdit.textChanged.connect(self.val)
+        self.showMaximized()
+    def val(self):
+        try:
+            name="'"+self.ui.lineEdit.text()+"'"
+            con_no=int(self.ui.lineEdit_2.text())
+            amt=int(self.ui.lineEdit_3.text())
+            plan="'"+self.ui.comboBox.currentText()+"'"
+            self.ui.pushButton.setEnabled(True)
+        except:
+            self.ui.pushButton.setEnabled(False)
     def back(self):
         self.main=clientsettings()
         self.main.show()
@@ -427,6 +444,7 @@ class addclient(QMainWindow):
         #loadUi('add-client.ui',self)
         self.ui = add_client()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -497,6 +515,8 @@ class payentry(QMainWindow):
         #loadUi('payentry.ui',self)
         self.ui = payentry_ui()
         self.ui.setupUi(self)
+        self.showMaximized()
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -540,6 +560,7 @@ class payentry(QMainWindow):
         self.ui.pushButton.clicked.connect(self.add)
         self.ui.lineEdit_3.textChanged.connect(self.val)
         self.ui.tableWidget_2.itemSelectionChanged.connect(self.val)
+        self.ui.pushButton.setEnabled(False)
     def val(self):
         try:
             from_date="'"+(self.ui.calendarWidget.selectedDate().toString("yyyy-MM-dd"))+"'"
@@ -630,6 +651,7 @@ class clientsettings(QMainWindow):
         #loadUi('client-settings.ui',self)
         self.ui = client_settings()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_4.clicked.connect(self.back)
@@ -663,12 +685,14 @@ class addplan(QMainWindow):
         #loadUi('add-plan.ui',self)
         self.ui = add_plan()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_2.clicked.connect(self.back)
         self.ui.pushButton.clicked.connect(self.add)
         self.ui.lineEdit.textChanged.connect(self.val)
         self.ui.textEdit.textChanged.connect(self.val)
+        self.ui.pushButton.setEnabled(False)
     def val(self):
         try:
             pname=self.ui.lineEdit.text()
@@ -702,6 +726,7 @@ class modifyplan(QMainWindow):
         #loadUi('modify-plan.ui',self)
         self.ui = modify_plan()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -716,6 +741,7 @@ class modifyplan(QMainWindow):
         self.ui.pushButton_2.clicked.connect(self.back)
         self.ui.pushButton.clicked.connect(self.update)
         self.ui.textEdit.textChanged.connect(self.val)
+        self.ui.pushButton.setEnabled(False)
     def val(self):
         try:
             desc=self.ui.textEdit.toPlainText()
@@ -750,6 +776,7 @@ class deleteplan(QMainWindow):
         #loadUi('delete-plan.ui',self)
         self.ui = delete_plan()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -763,6 +790,7 @@ class deleteplan(QMainWindow):
         self.ui.comboBox.addItems(ls)
         self.ui.pushButton_2.clicked.connect(self.back)
         self.ui.pushButton.clicked.connect(self.delete)
+        self.showMaximized()
     def delete(self):
         pname="'"+str(self.ui.comboBox.currentText())+"'"
         cur.execute('''
@@ -783,6 +811,7 @@ class Plansettings(QMainWindow):
         #loadUi('plan-settings.ui',self)
         self.ui = plan_settings()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_4.clicked.connect(self.back)
@@ -811,6 +840,7 @@ class Loginfailed(QMainWindow):
         #loadUi('loginfailed.ui',self)
         self.ui = loginfailed()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         #self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton.clicked.connect(self.login)
@@ -848,6 +878,7 @@ class adattd(QMainWindow):
         #loadUi('adattd.ui',self)
         self.ui = adattd_ui()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -973,6 +1004,7 @@ class User(QMainWindow):
         #loadUi('user.ui',self)
         self.ui = user()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -1137,6 +1169,7 @@ class changepass(QMainWindow):
         #loadUi('changepass.ui',self)
         self.ui = changepass_ui()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -1199,6 +1232,7 @@ class generalsettings(QMainWindow):
         #loadUi('general-settings.ui',self)
         self.ui = general_settings()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_2.clicked.connect(self.back)
@@ -1217,6 +1251,7 @@ class Admin(QMainWindow):
         #loadUi('admin.ui',self)
         self.ui = admin()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_7.clicked.connect(self.logout)
@@ -1264,6 +1299,7 @@ class LoginPage(QMainWindow):
         #loadUi('loginpage.ui',self)
         self.ui = loginpage()
         self.ui.setupUi(self)
+        self.showMaximized()
         self.setWindowTitle("GYM MANAGEMENT SYSTEM")
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton.clicked.connect(self.login)
@@ -1405,176 +1441,73 @@ def report_fun():
                 due.write(r,2,row[2])
                 due.write(r,3,row[3])
                 r=r+1
-            classes=workbook.add_worksheet('classes')
-            classes.set_column(1,3,25)
-            classes.write(0,0,'name')
-            classes.write(0,1,'date')
-            classes.write(0,2,'intime')
-            classes.write(0,3,'image')
             cur.execute('''
-                         SELECT Client_data.name,Attendance.date,Attendance.TIME,Client_data.c_id
-                         FROM Client_data,Attendance
-                         WHERE Client_data.c_id=Attendance.c_id AND Attendance.date>=date('now','-7 days') AND Client_data.p_no=1
-                         ORDER BY Client_data.c_id
+                        SELECT p_name,p_no FROM Plan_data
                         ''')
-            rows=cur.fetchall()
-            r=1
-            for i in range(len(rows)):
-                classes.set_row(r,175)
-                classes.write(r,0,rows[i][0])
-                classes.write(r,1,rows[i][1])
-                classes.write(r,2,rows[i][2])
-                if(i==0):
-                   cur.execute('''
-                            SELECT count(*),strftime('%m',date)
-                            FROM Attendance 
-                            WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
-                            GROUP BY strftime('%m',date);
-                           '''.format(rows[i][3]))
-                   temp=cur.fetchall()
-                   uid=rows[i][3]
-                   frequency=[]
-                   month=[]
-                   for x in range(len(temp)):
-                       frequency.append(temp[x][0])
-                       month.append(temp[x][1])
-                   month=tuple(month)
-                   print(month,frequency,uid)
-                   imgpath=bargraph.plot(month,frequency,uid)
-                   classes.insert_image(r,3,imgpath)
+            ls=[]
+            l=cur.fetchall()
+            for x in range(len(l)):
+                ls.append((str(l[x][0]),l[x][1]))
+            print(ls)    
+            for name in ls:    
+                wb=workbook.add_worksheet('{}'.format(name[0]))
+                wb.set_column(1,3,25)
+                wb.write(0,0,'name')
+                wb.write(0,1,'date')
+                wb.write(0,2,'intime')
+                wb.write(0,3,'image')
+                cur.execute('''
+                             SELECT Client_data.name,Attendance.date,Attendance.TIME,Client_data.c_id
+                             FROM Client_data,Attendance
+                             WHERE Client_data.c_id=Attendance.c_id AND Attendance.date>=date('now','-7 days') AND Client_data.p_no={}
+                             ORDER BY Client_data.c_id
+                            '''.format(name[1]))
+                rows=cur.fetchall()
+                r=1
+                for i in range(len(rows)):
+                    wb.set_row(r,175)
+                    wb.write(r,0,rows[i][0])
+                    wb.write(r,1,rows[i][1])
+                    wb.write(r,2,rows[i][2])
+                    if(i==0):
+                       cur.execute('''
+                                SELECT count(*),strftime('%m',date)
+                                FROM Attendance 
+                                WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
+                                GROUP BY strftime('%m',date);
+                               '''.format(rows[i][3]))
+                       temp=cur.fetchall()
+                       uid=rows[i][3]
+                       frequency=[]
+                       month=[]
+                       for x in range(len(temp)):
+                           frequency.append(temp[x][0])
+                           month.append(temp[x][1])
+                       month=tuple(month)
+                       print(month,frequency,uid)
+                       imgpath=bargraph.plot(month,frequency,uid)
+                       wb.insert_image(r,3,imgpath)
 
-                if(rows[i][3]!=rows[i-1][3] and i!=0):
-                    cur.execute('''
-                            SELECT count(*),strftime('%m',date)
-                            FROM Attendance 
-                            WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
-                            GROUP BY strftime('%m',date);
-                           '''.format(rows[i][3]))
-                    temp=cur.fetchall()
-                    uid=rows[i][3]
-                    frequency=[]
-                    month=[]
-                    for x in range(len(temp)):
-                        frequency.append(temp[x][0])
-                        month.append(temp[x][1])
-                    month=tuple(month)
-                    print(month,frequency,uid)
-                    imgpath=bargraph.plot(month,frequency,uid)
-                    classes.insert_image(r,3,imgpath)
-                r=r+1
-            pt=workbook.add_worksheet('pt')
-            pt.set_column(1,3,25)
-            pt.write(0,0,'name')
-            pt.write(0,1,'date')
-            pt.write(0,2,'intime')
-            pt.write(0,3,'image')
-            cur.execute('''
-                         SELECT Client_data.name,Attendance.date,Attendance.TIME,Client_data.c_id
-                         FROM Client_data,Attendance
-                         WHERE Client_data.c_id=Attendance.c_id AND Attendance.date>=date('now','-7 days') AND Client_data.p_no=2
-                         ORDER BY Client_data.c_id
-                        ''')
-            rows=cur.fetchall()
-            r=1
-            for i  in range(len(rows)):
-                pt.set_row(r,175)
-                pt.write(r,0,rows[i][0])
-                pt.write(r,1,rows[i][1])
-                pt.write(r,2,rows[i][2])
-                if(i==0):
-                    cur.execute('''
-                            SELECT count(*),strftime('%m',date)
-                            FROM Attendance 
-                            WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
-                            GROUP BY strftime('%m',date);
-                           '''.format(rows[i][3]))
-                    temp=cur.fetchall()
-                    uid=rows[i][3]
-                    frequency=[]
-                    month=[]
-                    for x in range(len(temp)):
-                        frequency.append(temp[x][0])
-                        month.append(temp[x][1])
-                    month=tuple(month)
-                    print(month,frequency,uid)
-                    imgpath=bargraph.plot(month,frequency,uid)
-                    pt.insert_image(r,3,imgpath)
-
-                if(rows[i][3]!=rows[i-1][3] and i!=0):
-                    cur.execute('''
-                            SELECT count(*),strftime('%m',date)
-                            FROM Attendance 
-                            WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
-                            GROUP BY strftime('%m',date);
-                           '''.format(rows[i][3]))
-                    temp=cur.fetchall()
-                    uid=rows[i][3]
-                    frequency=[]
-                    month=[]
-                    for x in range(len(temp)):
-                        frequency.append(temp[x][0])
-                        month.append(temp[x][1])
-                    month=tuple(month)
-                    print(month,frequency,uid)
-                    imgpath=bargraph.plot(month,frequency,uid)
-                    pt.insert_image(r,3,imgpath)
-                r=r+1
-            group_pt=workbook.add_worksheet('group-pt')
-            group_pt.set_column(1,3,25)
-            group_pt.write(0,0,'name')
-            group_pt.write(0,1,'date')
-            group_pt.write(0,2,'intime')
-            group_pt.write(0,3,'image')
-            cur.execute('''
-                         SELECT Client_data.name,Attendance.date,Attendance.TIME,Client_data.c_id
-                         FROM Client_data,Attendance
-                         WHERE Client_data.c_id=Attendance.c_id AND Attendance.date>=date('now','-7 days') AND Client_data.p_no=3
-                         ORDER BY Client_data.c_id
-                        ''')
-            rows=cur.fetchall()
-            r=1
-            for i in range(len(rows)):
-                group_pt.set_row(r,175)
-                group_pt.write(r,0,rows[i][0])
-                group_pt.write(r,1,rows[i][1])
-                group_pt.write(r,2,rows[i][2])
-                if(i==0):
-                    cur.execute('''
-                            SELECT count(*),strftime('%m',date)
-                            FROM Attendance 
-                            WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
-                            GROUP BY strftime('%m',date);
-                           '''.format(rows[i][3]))
-                    temp=cur.fetchall()
-                    uid=rows[i][3]
-                    frequency=[]
-                    month=[]
-                    for x in range(len(temp)):
-                        frequency.append(temp[x][0])
-                        month.append(temp[x][1])
-                    month=tuple(month)
-                    print(month,frequency,uid)
-                    imgpath=bargraph.plot(month,frequency,uid)
-                    group_pt.insert_image(r,3,imgpath)
-                if(rows[i][3]!=rows[i-1][3] and i!=0):
-                    cur.execute('''
-                            SELECT count(*),strftime('%m',date)
-                            FROM Attendance 
-                            WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
-                            GROUP BY strftime('%m',date);
-                           '''.format(rows[i][3]))
-                    temp=cur.fetchall()
-                    uid=rows[i][3]
-                    frequency=[]
-                    month=[]
-                    for x in range(len(temp)):
-                        frequency.append(temp[x][0])
-                        month.append(temp[x][1])
-                    month=tuple(month)
-                    print(month,frequency,uid)
-                    imgpath=bargraph.plot(month,frequency,uid)
-                    group_pt.insert_image(r,3,imgpath)
-                r=r+1
+                    if(rows[i][3]!=rows[i-1][3] and i!=0):
+                        cur.execute('''
+                                SELECT count(*),strftime('%m',date)
+                                FROM Attendance 
+                                WHERE  strftime('%Y',date)=strftime('%Y','now') AND Attendance.c_id={}
+                                GROUP BY strftime('%m',date);
+                               '''.format(rows[i][3]))
+                        temp=cur.fetchall()
+                        uid=rows[i][3]
+                        frequency=[]
+                        month=[]
+                        for x in range(len(temp)):
+                            frequency.append(temp[x][0])
+                            month.append(temp[x][1])
+                        month=tuple(month)
+                        print(month,frequency,uid)
+                        imgpath=bargraph.plot(month,frequency,uid)
+                        wb.insert_image(r,3,imgpath)
+                    r=r+1
+            
             absent=workbook.add_worksheet('absent')
             absent.set_column(1,3,25)
             absent.write(0,0,'name')
