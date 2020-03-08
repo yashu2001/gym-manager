@@ -13,10 +13,18 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="8" column="3" alignment="Qt::AlignRight|Qt::AlignBottom">
      <widget class="QPushButton" name="pushButton_2">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(170, 0, 0);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
       <property name="text">
        <string>Logout</string>
       </property>
@@ -24,6 +32,11 @@
     </item>
     <item row="7" column="2" colspan="2" alignment="Qt::AlignLeft|Qt::AlignTop">
      <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 0, 0);
+color: rgb(255, 255, 255);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
       <property name="text">
        <string>MARK ATTENDANCE</string>
       </property>
@@ -39,6 +52,9 @@
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="sizeAdjustPolicy">
        <enum>QAbstractScrollArea::AdjustIgnored</enum>
@@ -77,7 +93,7 @@
        <bool>true</bool>
       </attribute>
       <attribute name="verticalHeaderStretchLastSection">
-       <bool>true</bool>
+       <bool>false</bool>
       </attribute>
      </widget>
     </item>
@@ -88,6 +104,9 @@
         <width>294</width>
         <height>23</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(170, 0, 0);</string>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ff0000;&quot;&gt;PLEASE MARK YOUR ATTENDANCE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -108,10 +127,20 @@
      </widget>
     </item>
     <item row="2" column="1" alignment="Qt::AlignRight|Qt::AlignTop">
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(170, 0, 0);</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="2" alignment="Qt::AlignLeft|Qt::AlignTop">
      <widget class="QPushButton" name="pushButton_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 0, 0);
+color: rgb(255, 255, 255);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
       <property name="text">
        <string>Search</string>
       </property>

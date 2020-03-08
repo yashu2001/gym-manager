@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'testday.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.0
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,16 +13,19 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(594, 796)
+        MainWindow.resize(466, 797)
+        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setStyleSheet("color: rgb(170, 0, 0);")
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 1, 1, 1, 2)
         self.tableWidget_2 = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget_2.setMinimumSize(QtCore.QSize(100, 0))
+        self.tableWidget_2.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.tableWidget_2.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget_2.setTabKeyNavigation(False)
         self.tableWidget_2.setProperty("showDropIndicator", False)
@@ -33,9 +36,11 @@ class Ui_MainWindow(object):
         self.tableWidget_2.horizontalHeader().setStretchLastSection(True)
         self.gridLayout.addWidget(self.tableWidget_2, 3, 0, 1, 4)
         self.label_10 = QtWidgets.QLabel(self.centralwidget)
+        self.label_10.setStyleSheet("color: rgb(170, 0, 0);")
         self.label_10.setObjectName("label_10")
         self.gridLayout.addWidget(self.label_10, 4, 2, 1, 1)
         self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_4.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.gridLayout.addWidget(self.lineEdit_4, 5, 1, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -43,32 +48,43 @@ class Ui_MainWindow(object):
         self.label.setPixmap(QtGui.QPixmap("2.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 4)
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 4, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
         self.pushButton_3.setObjectName("pushButton_3")
         self.gridLayout.addWidget(self.pushButton_3, 2, 3, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignBottom)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_3.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.gridLayout.addWidget(self.lineEdit_3, 4, 1, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_9 = QtWidgets.QLabel(self.centralwidget)
+        self.label_9.setStyleSheet("color: rgb(170, 0, 0);")
         self.label_9.setObjectName("label_9")
         self.gridLayout.addWidget(self.label_9, 5, 0, 1, 1, QtCore.Qt.AlignTop)
         self.lineEdit_6 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_6.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_6.setObjectName("lineEdit_6")
         self.gridLayout.addWidget(self.lineEdit_6, 5, 3, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 2, 2, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignBottom)
         self.lineEdit_5 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_5.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.gridLayout.addWidget(self.lineEdit_5, 4, 3, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_8 = QtWidgets.QLabel(self.centralwidget)
+        self.label_8.setStyleSheet("color: rgb(170, 0, 0);")
         self.label_8.setObjectName("label_8")
         self.gridLayout.addWidget(self.label_8, 4, 0, 1, 1)
         self.label_11 = QtWidgets.QLabel(self.centralwidget)
+        self.label_11.setStyleSheet("color: rgb(170, 0, 0);")
         self.label_11.setObjectName("label_11")
         self.gridLayout.addWidget(self.label_11, 5, 2, 1, 1)
         self.label_12 = QtWidgets.QLabel(self.centralwidget)
+        self.label_12.setStyleSheet("color: rgb(170, 0, 0);")
         self.label_12.setObjectName("label_12")
         self.gridLayout.addWidget(self.label_12, 6, 0, 1, 1)
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
@@ -76,9 +92,15 @@ class Ui_MainWindow(object):
         self.checkBox.setObjectName("checkBox")
         self.gridLayout.addWidget(self.checkBox, 6, 1, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.pushButton, 6, 3, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
         self.pushButton_2.setObjectName("pushButton_2")
         self.gridLayout.addWidget(self.pushButton_2, 6, 2, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -86,7 +108,7 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 594, 21))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 466, 21))
         self.menuBar.setObjectName("menuBar")
         MainWindow.setMenuBar(self.menuBar)
 
@@ -104,4 +126,4 @@ class Ui_MainWindow(object):
         self.label_11.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Time</span></p><p><br/></p><p><br/></p></body></html>"))
         self.label_12.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Modified</span></p><p><br/></p><p><br/></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "MAKE ENTRY"))
-        self.pushButton_2.setText(_translate("MainWindow", "BACK TO PREVIOUS MENU"))
+        self.pushButton_2.setText(_translate("MainWindow", " <  BACK TO PREVIOUS MENU"))

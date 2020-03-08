@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'user.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.0
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -14,14 +14,21 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(466, 549)
+        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
         self.pushButton_2.setObjectName("pushButton_2")
         self.gridLayout.addWidget(self.pushButton_2, 8, 3, 1, 1, QtCore.Qt.AlignRight|QtCore.Qt.AlignBottom)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.pushButton, 7, 2, 1, 2, QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
@@ -31,6 +38,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy)
         self.tableWidget.setAutoFillBackground(False)
+        self.tableWidget.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.tableWidget.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustIgnored)
         self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setTabKeyNavigation(False)
@@ -46,10 +54,11 @@ class Ui_MainWindow(object):
         self.tableWidget.setRowCount(0)
         self.tableWidget.horizontalHeader().setDefaultSectionSize(105)
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
-        self.tableWidget.verticalHeader().setStretchLastSection(True)
+        self.tableWidget.verticalHeader().setStretchLastSection(False)
         self.gridLayout.addWidget(self.tableWidget, 7, 0, 2, 2)
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setMaximumSize(QtCore.QSize(294, 23))
+        self.label.setStyleSheet("color: rgb(170, 0, 0);")
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 1, 0, 1, 4, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
@@ -59,9 +68,14 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 0, 0, 1, 4, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"color: rgb(170, 0, 0);")
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 2, 1, 1, 1, QtCore.Qt.AlignRight|QtCore.Qt.AlignTop)
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
         self.pushButton_3.setObjectName("pushButton_3")
         self.gridLayout.addWidget(self.pushButton_3, 2, 2, 1, 1, QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         MainWindow.setCentralWidget(self.centralwidget)
