@@ -2,6 +2,11 @@
 developed by yash narang
 gym management system 
 '''
+'''
+Tkinter for file dialog
+'''
+from tkinter import filedialog as fd
+from tkinter import Tk
 '''importing code for ui files'''
 from project.admin import Ui_MainWindow as admin
 from project.adattd import Ui_MainWindow as adattd_ui
@@ -46,13 +51,14 @@ from PyQt5.uic import loadUi
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True) #enable highdpi scaling
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True) #use highdpi icons
 name=0#global var used in forwarding data from one ui to another
+app_name='GYM MANAGEMENT SYSTEM v2.5.2'
 class testday(QMainWindow):
     def __init__(self):
         super(testday,self).__init__()
         self.ui=testday_ui()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                     SELECT c_id,name from Client_data
@@ -191,7 +197,7 @@ class deleteclient(QMainWindow):
         self.ui = delete_client()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
@@ -307,7 +313,7 @@ class modifyclient(QMainWindow):
         self.ui = modify_client()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                      SELECT name from Client_data
@@ -342,7 +348,7 @@ class modifyclient1(QMainWindow):
         self.ui = modify_client1()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                      SELECT p_name from Plan_data
@@ -445,7 +451,7 @@ class addclient(QMainWindow):
         self.ui = add_client()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                      SELECT p_name from Plan_data
@@ -517,7 +523,7 @@ class payentry(QMainWindow):
         self.ui.setupUi(self)
         self.showMaximized()
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                     SELECT c_id,name from Client_data
@@ -652,7 +658,7 @@ class clientsettings(QMainWindow):
         self.ui = client_settings()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_4.clicked.connect(self.back)
         self.ui.pushButton.clicked.connect(self.add)
@@ -686,7 +692,7 @@ class addplan(QMainWindow):
         self.ui = add_plan()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_2.clicked.connect(self.back)
         self.ui.pushButton.clicked.connect(self.add)
@@ -727,7 +733,7 @@ class modifyplan(QMainWindow):
         self.ui = modify_plan()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                      SELECT p_name from Plan_data
@@ -777,7 +783,7 @@ class deleteplan(QMainWindow):
         self.ui = delete_plan()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                      SELECT p_name from Plan_data
@@ -812,7 +818,7 @@ class Plansettings(QMainWindow):
         self.ui = plan_settings()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_4.clicked.connect(self.back)
         self.ui.pushButton.clicked.connect(self.add)
@@ -841,7 +847,7 @@ class Loginfailed(QMainWindow):
         self.ui = loginfailed()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         #self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton.clicked.connect(self.login)
     def login(self):
@@ -880,7 +886,7 @@ class adattd(QMainWindow):
         self.ui = adattd_ui()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                     SELECT c_id,name from Client_data
@@ -1006,7 +1012,7 @@ class User(QMainWindow):
         self.ui = user()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                     SELECT c_id,name from Client_data
@@ -1171,7 +1177,7 @@ class changepass(QMainWindow):
         self.ui = changepass_ui()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         cur.execute('''
                      SELECT u_name from Users
@@ -1234,10 +1240,20 @@ class generalsettings(QMainWindow):
         self.ui = general_settings()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_2.clicked.connect(self.back)
         self.ui.pushButton.clicked.connect(self.changepass)
+        self.ui.pushButton_3.clicked.connect(self.restore)
+    def restore(self):
+        Tk().withdraw()
+        file = fd.askopenfile()
+        try:
+            bckpconn=sqlite3.connect(file.name)
+            bckpconn.backup(conn,pages=0,progress=progress)
+            print('success')
+        except:
+            print('failed')        
     def changepass(self):
         self.main=changepass()
         self.main.show()
@@ -1253,7 +1269,7 @@ class Admin(QMainWindow):
         self.ui = admin()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton_7.clicked.connect(self.logout)
         self.ui.pushButton_4.clicked.connect(self.attd)
@@ -1270,6 +1286,8 @@ class Admin(QMainWindow):
         self.main=generalsettings()
         self.main.show()
         self.close()
+
+
     def clientsettings(self):
         self.main=clientsettings()
         self.main.show()
@@ -1301,7 +1319,7 @@ class LoginPage(QMainWindow):
         self.ui = loginpage()
         self.ui.setupUi(self)
         self.showMaximized()
-        self.setWindowTitle("GYM MANAGEMENT SYSTEM")
+        self.setWindowTitle(app_name)
         self.setWindowIcon(QtGui.QIcon('icon.ico'))
         self.ui.pushButton.clicked.connect(self.login)
     def login(self):

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'general-settings.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.1
+# Created by: PyQt5 UI code generator 5.13.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(466, 459)
+        MainWindow.resize(466, 493)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -31,6 +31,12 @@ class Ui_MainWindow(object):
 "color: rgb(170, 0, 0);")
         self.label_4.setObjectName("label_4")
         self.verticalLayout.addWidget(self.label_4, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(170, 0, 0);\n"
+"font: 75 10pt \"MS Shell Dlg 2\";")
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.verticalLayout.addWidget(self.pushButton_3, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(170, 0, 0);\n"
@@ -55,5 +61,6 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">GENERAL SETTINGS</p><p align=\"center\"><br/></p></body></html>"))
+        self.pushButton_3.setText(_translate("MainWindow", "RESTORE BACKUP"))
         self.pushButton.setText(_translate("MainWindow", "CHANGE PASSWORD"))
         self.pushButton_2.setText(_translate("MainWindow", "<  BACK TO PREVIOUS MENU"))
