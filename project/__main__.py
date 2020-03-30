@@ -1415,14 +1415,21 @@ def dbfun():
                     INSERT INTO Plan_data (p_name,description) VALUES('group personal training','a plan to keep our clients healthy and fit')
                     ''')
     conn.commit()
+def progress(status, remaining, total):
+    print(f'Copied {total-remaining} of {total} pages...')     
 def report_fun():
     name='report-'+str(datetime.date.today())
     cur.execute('''SELECT * FROM attendance''')
     rows=cur.fetchall()
-    if(len(rows)>1):
+    if(len(rows)>=1):
         if(os.path.exists('project/reports/{}.xlsx'.format(name))):
             return
         else:
+            bckp_name='backup-'+str(datetime.date.today())
+            bckpconn=sqlite3.connect('project/backups/{}.sqlite'.format(bckp_name))
+            conn.backup(bckpconn, pages=0, progress=progress)
+            print("backup successful")
+            bckpconn.close()
             workbook = xlsxwriter.Workbook('project/reports/{}.xlsx'.format(name))
             due=workbook.add_worksheet('due')
             due.set_column(1,4,25)
@@ -1579,6 +1586,7 @@ def report_fun():
             workbook.close()
 def first():
     dbfun()
+    print(datetime.datetime.today().strftime("%A"))
     if(datetime.datetime.today().strftime("%A")=='Saturday'):
         report_fun()
     app=QApplication(sys.argv)
